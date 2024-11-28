@@ -1,0 +1,42 @@
+int motor1pin1 = 2;
+2int motor1pin2 = 3;
+3
+4int motor2pin1 = 4;
+5int   motor2pin2 = 5;
+6
+7void setup() {
+8  // put your setup code here, to run once:
+9   pinMode(motor1pin1, OUTPUT);
+10  pinMode(motor1pin2, OUTPUT);
+11  pinMode(motor2pin1,   OUTPUT);
+12  pinMode(motor2pin2, OUTPUT);
+13
+14  //(Optional)
+15  pinMode(9,   OUTPUT); 
+16  pinMode(10, OUTPUT);
+17  //(Optional)
+18}
+19
+20void loop() {
+21   // put your main code here, to run repeatedly:
+22
+23  //Controlling speed (0   = off and 255 = max speed):     
+24  //(Optional)
+25  analogWrite(9, 100); //ENA   pin
+26  analogWrite(10, 200); //ENB pin
+27  //(Optional)
+28  
+29  digitalWrite(motor1pin1,   HIGH);
+30  digitalWrite(motor1pin2, LOW);
+31
+32  digitalWrite(motor2pin1, HIGH);
+33   digitalWrite(motor2pin2, LOW);
+34  delay(3000);
+35
+36  digitalWrite(motor1pin1,   LOW);
+37  digitalWrite(motor1pin2, HIGH);
+38
+39  digitalWrite(motor2pin1, LOW);
+40   digitalWrite(motor2pin2, HIGH);
+41  delay(3000);
+42}
